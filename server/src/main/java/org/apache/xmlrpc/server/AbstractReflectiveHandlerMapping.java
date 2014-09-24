@@ -136,8 +136,8 @@ public abstract class AbstractReflectiveHandlerMapping
      *     If no matching method is found at all, then an
      *     exception is thrown.</li>
      * </ul>
-     * @param pKey Suffix for building handler names. A dot and
-     * the method name are being added.
+     * @param pKey Prefix for building handler names.
+     * If non-null, the prefix and a dot are added before the method name
      * @param pType The class being inspected.
      */
     protected void registerPublicMethods(String pKey,
@@ -149,7 +149,12 @@ public abstract class AbstractReflectiveHandlerMapping
             if (!isHandlerMethod(method)) {
                 continue;
             }
-            String name = pKey + "." + method.getName();
+            String name;
+            if (pKey != null) {
+                name = pKey + "." + method.getName();
+            } else {
+                name = method.getName();
+            }
             Method[] mArray;
             Method[] oldMArray = (Method[]) map.get(name);
             if (oldMArray == null) {

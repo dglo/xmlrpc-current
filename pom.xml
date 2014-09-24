@@ -29,7 +29,7 @@
   <groupId>org.apache.xmlrpc</groupId>
   <artifactId>xmlrpc</artifactId>
   <name>Apache XML-RPC</name>
-  <version>3.1.3-SNAPSHOT</version>
+  <version>3.1.3.1-ICECUBE</version>
   <description>
     Apache XML-RPC is a Java implementation of XML-RPC, a popular protocol that uses XML over HTTP to
     implement remote procedure calls. Compared to SOAP, or JAX-RPC, it is stable, much simpler and easier to handle.
@@ -289,9 +289,10 @@
   </contributors>
 
   <scm>
-    <connection>scm:svn:https://svn.apache.org/repos/asf/webservices/xmlrpc/trunk</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/webservices/xmlrpc/trunk</developerConnection>
-    <url>https://svn.apache.org/viewvc/webservices/xmlrpc/trunk</url>
+    <connection>scm:svn:http://code.icecube.wisc.edu/daq/projects/xmlrpc-current/trunk</connection>
+    <developerConnection>scm:svn:http://code.icecube.wisc.edu/daq/projects/xmlrpc-current/trunk</developerConnection>
+    <tag>HEAD</tag>
+    <url>http://code.icecube.wisc.edu/daq/projects/xmlrpc-current</url>
   </scm>
 
   <build>
@@ -312,6 +313,19 @@
           <target>1.2</target>
         </configuration>
       </plugin>
+          <plugin>
+            <inherited>true</inherited>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.7</version>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.4</version>
+              </dependency>
+            </dependencies>
+          </plugin>
     </plugins>
   </build>
 
@@ -403,11 +417,17 @@
   </reporting>
 
   <distributionManagement>
+<!--
     <site>
       <id>${xmlrpc.www.id}</id>
       <name>XML-RPC directory on ws.apache.org</name>
       <url>${xmlrpc.www.url}</url>
     </site>
+-->
+    <repository>
+      <id>icecube-maven-repository</id>
+      <url>scp://pub.icecube.wisc.edu/net/maven2/repository</url>
+    </repository>
   </distributionManagement>
 
   <profiles>
@@ -496,6 +516,7 @@
             </executions>
           </plugin>
           <!-- We want to deploy the artifact to a staging location for perusal -->
+<!--
           <plugin>
             <inherited>true</inherited>
             <groupId>org.apache.maven.plugins</groupId>
@@ -506,6 +527,7 @@
               <updateReleaseInfo>true</updateReleaseInfo>
             </configuration>
           </plugin>
+-->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>

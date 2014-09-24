@@ -250,6 +250,8 @@ public class TypeFactoryImpl implements TypeFactory {
 				return new ByteArrayParser();
 			} else if (StringSerializer.STRING_TAG.equals(pLocalName)) {
 				return new StringParser();
+			} else if (I8Serializer.I8_TAG.equals(pLocalName)) {
+				return new I8Parser();
 			}
 		}
 		return null;

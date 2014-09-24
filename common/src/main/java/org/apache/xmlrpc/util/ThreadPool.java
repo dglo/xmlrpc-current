@@ -130,6 +130,11 @@ public class ThreadPool {
         waitingThreads.remove(pPoolable);
 	}
 
+	public boolean isEmpty()
+	{
+		return waitingTasks.size() == 0 && runningThreads.size() == 0;
+	}
+
 	void repool(Poolable pPoolable) {
 	    boolean discarding = false;
 	    Task task = null;

@@ -33,6 +33,6 @@ public class I8Serializer extends TypeSerializerImpl {
 	public static final String EX_I8_TAG = "ex:i8";
 
 	public void write(ContentHandler pHandler, Object pObject) throws SAXException {
-		write(pHandler, I8_TAG, EX_I8_TAG, pObject.toString());
+		write(pHandler, I8_TAG, pObject.toString());
 	}
 }
