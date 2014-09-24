@@ -29,7 +29,7 @@
   <groupId>org.apache.xmlrpc</groupId>
   <artifactId>xmlrpc</artifactId>
   <name>Apache XML-RPC</name>
-  <version>3.1.3.1-ICECUBE</version>
+  <version>3.1.3.2-ICECUBE</version>
   <description>
     Apache XML-RPC is a Java implementation of XML-RPC, a popular protocol that uses XML over HTTP to
     implement remote procedure calls. Compared to SOAP, or JAX-RPC, it is stable, much simpler and easier to handle.
@@ -289,10 +289,9 @@
   </contributors>
 
   <scm>
-    <connection>scm:svn:http://code.icecube.wisc.edu/daq/projects/xmlrpc-current/trunk</connection>
-    <developerConnection>scm:svn:http://code.icecube.wisc.edu/daq/projects/xmlrpc-current/trunk</developerConnection>
-    <tag>HEAD</tag>
-    <url>http://code.icecube.wisc.edu/daq/projects/xmlrpc-current</url>
+    <connection>scm:svn:https://svn.apache.org/repos/asf/webservices/xmlrpc/trunk</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/webservices/xmlrpc/trunk</developerConnection>
+    <url>https://svn.apache.org/viewvc/webservices/xmlrpc/trunk</url>
   </scm>
 
   <build>
@@ -306,7 +305,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
+        <version>3.1</version>
         <inherited>true</inherited>
         <configuration>
           <source>1.3</source>
@@ -317,12 +316,12 @@
             <inherited>true</inherited>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
-            <version>2.7</version>
+            <version>2.8.2</version>
             <dependencies>
               <dependency>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh</artifactId>
-                <version>2.4</version>
+                <version>2.7</version>
               </dependency>
             </dependencies>
           </plugin>
@@ -334,13 +333,13 @@
       <dependency>
         <groupId>commons-httpclient</groupId>
         <artifactId>commons-httpclient</artifactId>
-        <version>3.0.1</version>
+        <version>3.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>commons-logging</groupId>
         <artifactId>commons-logging</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
         <exclusions>
           <exclusion>
             <groupId>avalon-framework</groupId>
@@ -355,7 +354,7 @@
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
-        <version>2.4</version>
+        <version>2.5</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -365,14 +364,9 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.apache.ws.commons.util</groupId>
-        <artifactId>ws-commons-util</artifactId>
-        <version>1.0.2</version>
-      </dependency>
-      <dependency>
-        <groupId>jaxme</groupId>
+        <groupId>org.apache.ws.jaxme</groupId>
         <artifactId>jaxmeapi</artifactId>
-        <version>0.5.1</version>
+        <version>0.5.2</version>
         <scope>provided</scope>
       </dependency>
     </dependencies>
@@ -383,7 +377,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.5</version>
+        <version>2.10</version>
         <reportSets>
           <reportSet>
             <configuration>
@@ -399,7 +393,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-changes-plugin</artifactId>
-        <version>2.1</version>
+        <version>2.10</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -411,7 +405,7 @@
       <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
-        <version>0.6</version>
+        <version>0.11</version>
       </plugin>
     </plugins>
   </reporting>
@@ -435,6 +429,7 @@
       <activation>
         <jdk>1.4</jdk>
       </activation>
+<!--
       <dependencies>
         <dependency>
           <groupId>org.apache.ws.commons</groupId>
@@ -442,6 +437,7 @@
           <version>1.0.1</version>
         </dependency>
       </dependencies>
+-->
     </profile>
     <profile>
       <id>release</id>

@@ -24,7 +24,7 @@
   <parent>
     <groupId>org.apache.xmlrpc</groupId>
     <artifactId>xmlrpc</artifactId>
-    <version>3.1.3.1-ICECUBE</version>
+    <version>3.1.3.2-ICECUBE</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>xmlrpc-server</artifactId>
@@ -65,6 +65,15 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+    </dependency>
+    <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
     </dependency>
@@ -74,10 +83,15 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-    	<groupId>org.apache.xmlrpc</groupId>
-    	<artifactId>xmlrpc-client</artifactId>
-	<version>${project.version}</version>
-    	<scope>test</scope>
+      <groupId>org.apache.xmlrpc</groupId>
+      <artifactId>xmlrpc-client</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>

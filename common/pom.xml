@@ -24,7 +24,7 @@
   <parent>
     <groupId>org.apache.xmlrpc</groupId>
     <artifactId>xmlrpc</artifactId>
-    <version>3.1.3.1-ICECUBE</version>
+    <version>3.1.3.2-ICECUBE</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>xmlrpc-common</artifactId>
@@ -56,11 +56,7 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>org.apache.ws.commons.util</groupId>
-      <artifactId>ws-commons-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>jaxme</groupId>
+      <groupId>org.apache.ws.jaxme</groupId>
       <artifactId>jaxmeapi</artifactId>
       <scope>provided</scope>
     </dependency>
